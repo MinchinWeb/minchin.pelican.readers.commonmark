@@ -15,6 +15,8 @@ except ImportError:
 
 logger = logging.getLogger(__name__)
 
+COMMONMARK_DEBUG_LINKS = True
+
 
 def check_settings(pelican):
     """

@@ -11,6 +11,7 @@ from pygments.lexers.special import TextLexer
 from pygments.util import ClassNotFound
 
 from ..constants import LOG_PREFIX, PELICAN_LINK_PLACEHOLDERS, SOURCE_EXTS, STATIC_EXTS
+from ..initialize import COMMONMARK_DEBUG_LINKS
 
 logger = logging.getLogger(__name__)
 
@@ -87,10 +88,12 @@ def _relative_links_for_pelican(original_url):
         # early exit
         return original_url
 
-    if new_url == original_url:
-        logger.debug('%s Link "%s" unchanged.' % (LOG_PREFIX, new_url))
-    else:
-        logger.debug('%s Link "%s" --> "%s"' % (LOG_PREFIX, original_url, new_url))
+    if COMMONMARK_DEBUG_LINKS:
+        if new_url == original_url:
+            logger.debug('%s Link "%s" unchanged.', LOG_PREFIX, new_url)
+        else:
+            logger.debug('%s Link "%s" --> "%s"', LOG_PREFIX, original_url, new_url)
+
     return new_url
 
 
