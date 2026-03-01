@@ -46,16 +46,17 @@ classifiers = [
     "Framework :: Pelican :: Plugins",
     "Intended Audience :: End Users/Desktop",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
     "Topic :: Text Processing :: Markup :: Markdown",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
 [project.urls]
 # "Homepage" =
-"Bug Tracker" = "https://github.com/MinchinWeb/minchin.pelican.readers.commonmark/issues"
+"Bug Tracker" = "https://github.com/minchinweb/minchin.pelican.readers.commonmark/issues"
 # Documentation = 
-Repository = "https://github.com/MinchinWeb/minchin.pelican.readers.commonmark"
-Changelog = "https://github.com/MinchinWeb/minchin.pelican.readers.commonmark/blob/master/CHANGELOG.rst"
+Repository = "https://github.com/minchinweb/minchin.pelican.readers.commonmark"
+Changelog = "https://github.com/minchinweb/minchin.pelican.readers.commonmark/blob/master/CHANGELOG.rst"
 # "Release Notes"
 
 
