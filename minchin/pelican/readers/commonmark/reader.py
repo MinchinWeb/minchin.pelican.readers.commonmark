@@ -52,10 +52,8 @@ class MDITReader(BaseReader):
 
         settings = self.settings["COMMONMARK"]
 
-    def read(self, source_path):
-        # rename variable so signature matches BaseReader
-        filename = source_path
-
+    def get_processor(self):
+        """Get the Markdown processor"""
         # setup our CommonMark (Markdown) processor
         md = MarkdownIt("commonmark")
         md = load_extensions(md, self.settings)
@@ -64,6 +62,44 @@ class MDITReader(BaseReader):
         md.add_render_rule("link_open", render_link_open)
         md.add_render_rule("image", render_image)
         md.add_render_rule("fence", render_fence)
+
+        return md
+
+    def drop_frame_html_tags(self, html_content, p=False):
+        """
+        Remove frame `<html>` and `<body>` tags, as we assume those will be
+        added by the theme and we just want the HTML fragment here. These
+        will be added by certain BeautifulSoup parsers (`lxml`, `html5lib`)
+        if there are missing.
+
+        Args:
+            p (bool): drop wrapper <p> (paragraph) tags
+        """
+        soup = BeautifulSoup(html_content, self.settings["COMMONMARK_HTML_PARSER"])
+        try:
+            if p is True:
+                html_content = soup.body.p.encode_contents()
+            else:
+                html_content = soup.body.encode_contents()
+        except AttributeError as e:
+            # raise Exception(
+            #     "Your 'soup' doesn't have a `body` tag. Try a different parser "
+            #     "for BeautifulSoup? (Like the `lxml` one?)"
+            # ) from e
+            pass
+        else:
+            # back to UTF-8 (from bytes)
+            html_content = html_content.decode()
+        # if we don't have a `body` tag, nothing needs to be done here
+
+        return html_content
+
+    def read(self, source_path):
+        # rename variable so signature matches BaseReader
+        filename = source_path
+
+        # setup our CommonMark (Markdown) processor
+        md = self.get_processor()
 
         # ---
         # open our source file
@@ -99,23 +135,7 @@ class MDITReader(BaseReader):
         html_content, metadata = h1_as_title(html_content, metadata, self.settings)
         html_content = remove_duplicate_h1(html_content, metadata, self.settings)
 
-        # Remove frame `<html>` and `<body>` tags, as we assume those will be
-        # added by the theme and we just want the HTML fragment here. These
-        # will be added by certain BeautifulSoup parsers (`lxml`, `html5lib`)
-        # if there are missing.
-        soup = BeautifulSoup(html_content, self.settings["COMMONMARK_HTML_PARSER"])
-        try:
-            html_content = soup.body.encode_contents()
-        except AttributeError as e:
-            # raise Exception(
-            #     "Your 'soup' doesn't have a `body` tag. Try a different parser "
-            #     "for BeautifulSoup? (Like the `lxml` one?)"
-            # ) from e
-            pass
-        else:
-            # back to UTF-8 (from bytes)
-            html_content = html_content.decode()
-        # if we don't have a `body` tag, nothing needs to be done here
+        html_content = self.drop_frame_html_tags(html_content)
 
         return html_content, metadata
 

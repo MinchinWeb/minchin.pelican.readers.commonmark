@@ -122,6 +122,9 @@ COMMONMARK_VERSION
   Version of the plugin. Idea is to have it available to displayed by the
   theme. Inserted by the plugin (if not provided).
 
+COMMONMARK_DEBUG_LINKS = True
+  Whether to debug link processing (when run with ``pelican --debug``)
+
 COMMONMARK_DEV_URL
   Homepage URL of the plugin. Idea is to have it available to be used by the
   theme. Inserted by the plugin (if not provided).

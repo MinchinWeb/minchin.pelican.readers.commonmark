@@ -4,6 +4,12 @@ Changelog for CommonMark
 *This is the changelog for ``minchin.pelican.readers.commonmark``, a plugin for
 Pelican.*
 
+- :feature:`-` add ``get_processor()`` and ``drop_frame_html_tags`` methods to
+  ``MDITReader`` class. See `Tasknotes Reader Issue 2
+  <https://github.com/minchinweb/minchin.pelican.readers.tasknotes/issues/2>`_.
+- :feature:`-` add ``COMMONMARK_DEBUG_LINKS`` setting
+- :bug:`- major` tweak signature of ``MDITReader.read()``
+
 - :release:`2.3.0 <2026-02-27>`
 - :support:`3` note why ``markdown-it-py`` (in Readme)
 - :support:`4` mention support for mark(ed) Markdown extension, via
