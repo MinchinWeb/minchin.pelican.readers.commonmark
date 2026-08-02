@@ -64,8 +64,12 @@ def clean_dates(value, settings=dict()):
         return_value = value
         return_case = 5
 
-    logger.log(5, f"{LOG_PREFIX} clean_dates() out {return_value} {type(return_value)} via {return_case}")
+    logger.log(
+        5,
+        f"{LOG_PREFIX} clean_dates() out {return_value} {type(return_value)} via {return_case}",
+    )
     return return_value
+
 
 def clean_tags(value, settings=dict()):
     """

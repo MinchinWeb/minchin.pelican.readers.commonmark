@@ -54,16 +54,18 @@ def _relative_links_for_pelican(original_url):
     test_url, _, _ = test_url.partition("?")
 
     # assumed external links
-    if test_url.startswith((
-        "http://",
-        "https://",
-        "//",
-        "mailto:",
-        "tel:",
-        "geo:",
-        "#",
-        "mid:",  # links to specific messages in Thunderbird
-    )):
+    if test_url.startswith(
+        (
+            "http://",
+            "https://",
+            "//",
+            "mailto:",
+            "tel:",
+            "geo:",
+            "#",
+            "mid:",  # links to specific messages in Thunderbird
+        )
+    ):
         new_url = original_url
 
     # assumed in-page links (i.e. `#test`)
@@ -82,8 +84,7 @@ def _relative_links_for_pelican(original_url):
 
     else:
         logger.warning(
-            '%s Don\'t know what to do with link target "%s".',
-            LOG_PREFIX, original_url
+            '%s Don\'t know what to do with link target "%s".', LOG_PREFIX, original_url
         )
         # early exit
         return original_url

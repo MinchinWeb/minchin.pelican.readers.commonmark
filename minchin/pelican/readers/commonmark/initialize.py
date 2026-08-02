@@ -39,24 +39,28 @@ def check_settings(pelican):
             pelican.settings["COMMONMARK_HTML_PARSER"] = "html.parser"
         logger.debug(
             '%s COMMONMARK_HTML_PARSER set to "%s"',
-            LOG_PREFIX, pelican.settings["COMMONMARK_HTML_PARSER"]
+            LOG_PREFIX,
+            pelican.settings["COMMONMARK_HTML_PARSER"],
         )
     else:
         logger.debug(
             '%s COMMONMARK_HTML_PARSER previously set manually. Is "%s".',
-            LOG_PREFIX, pelican.settings["COMMONMARK_HTML_PARSER"]
+            LOG_PREFIX,
+            pelican.settings["COMMONMARK_HTML_PARSER"],
         )
 
     if "COMMONMARK_INLINE_TAG_SYMBOLS" not in pelican.settings.keys():
         pelican.settings["COMMONMARK_INLINE_TAG_SYMBOLS"] = DEFAULT_TAG_SYMBOLS
         logger.debug(
             '%s COMMONMARK_INLINE_TAG_SYMBOLS set to default ("%s").',
-            LOG_PREFIX, pelican.settings["COMMONMARK_INLINE_TAG_SYMBOLS"]
+            LOG_PREFIX,
+            pelican.settings["COMMONMARK_INLINE_TAG_SYMBOLS"],
         )
     else:
         logger.debug(
             '%s COMMONMARK_INLINE_TAG_SYMBOLS (plugin settings) previously set manually to "%s".',
-            LOG_PREFIX, pelican.settings["COMMONMARK_INLINE_TAG_SYMBOLS"]
+            LOG_PREFIX,
+            pelican.settings["COMMONMARK_INLINE_TAG_SYMBOLS"],
         )
 
     if (
@@ -70,7 +74,8 @@ def check_settings(pelican):
         pelican.settings["COMMONMARK_MARKDOWN_LOG_LEVEL"] = logging.WARNING
     logger.debug(
         '%s COMMONMARK_MARKDOWN_LOG_LEVEL set to "%s"',
-        LOG_PREFIX, pelican.settings["COMMONMARK_MARKDOWN_LOG_LEVEL"]
+        LOG_PREFIX,
+        pelican.settings["COMMONMARK_MARKDOWN_LOG_LEVEL"],
     )
 
     # doesn't work, as we can't access it later through the Pelican settings
@@ -78,10 +83,12 @@ def check_settings(pelican):
         pelican.settings["COMMONMARK_DEBUG_LINKS"] = True
     logger.debug(
         '%s COMMONMARK_DEBUG_LINKS set to "%s"',
-        LOG_PREFIX, pelican.settings["COMMONMARK_DEBUG_LINKS"]
+        LOG_PREFIX,
+        pelican.settings["COMMONMARK_DEBUG_LINKS"],
     )
     global COMMONMARK_DEBUG_LINKS
     COMMONMARK_DEBUG_LINKS = pelican.settings["COMMONMARK_DEBUG_LINKS"]
+
 
 def commonmark_version(pelican):
     """
@@ -92,22 +99,26 @@ def commonmark_version(pelican):
         pelican.settings["COMMONMARK_VERSION"] = __version__
         logger.debug(
             '%s Adding CommonMark version "%s" to context.',
-            LOG_PREFIX, pelican.settings["COMMONMARK_VERSION"]
+            LOG_PREFIX,
+            pelican.settings["COMMONMARK_VERSION"],
         )
     else:
         logger.debug(
             '%s COMMONMARK_VERSION already defined. Is "%s".',
-            LOG_PREFIX, pelican.settings["COMMONMARK_VERSION"]
+            LOG_PREFIX,
+            pelican.settings["COMMONMARK_VERSION"],
         )
 
     if "COMMONMARK_DEV_URL" not in pelican.settings.keys():
         pelican.settings["COMMONMARK_DEV_URL"] = __url__
         logger.debug(
             '%s Adding CommonMark Dev URL "%s" to context.',
-            LOG_PREFIX, pelican.settings["COMMONMARK_DEV_URL"]
+            LOG_PREFIX,
+            pelican.settings["COMMONMARK_DEV_URL"],
         )
     else:
         logger.debug(
             '%s COMMONMARK_DEV_URL already defined. Is "%s".',
-            LOG_PREFIX, pelican.settings["COMMONMARK_DEV_URL"]
+            LOG_PREFIX,
+            pelican.settings["COMMONMARK_DEV_URL"],
         )
