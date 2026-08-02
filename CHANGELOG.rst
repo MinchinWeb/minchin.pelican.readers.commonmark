@@ -4,6 +4,7 @@ Changelog for CommonMark
 *This is the changelog for ``minchin.pelican.readers.commonmark``, a plugin for
 Pelican.*
 
+- :release:`2.4.0 <2026-08-01>`
 - :feature:`-` add ``get_processor()`` and ``drop_frame_html_tags`` methods to
   ``MDITReader`` class. See `Tasknotes Reader Issue 2
   <https://github.com/minchinweb/minchin.pelican.readers.tasknotes/issues/2>`_.
