@@ -22,3 +22,4 @@ releaser:
             - wheel
         pypi:
             - pelican
+            - mdit-py-plugins

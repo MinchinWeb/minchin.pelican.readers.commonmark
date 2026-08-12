@@ -1,5 +1,3 @@
--c base.txt
-
 invoke
 minchin.releaser
 pip-tools
