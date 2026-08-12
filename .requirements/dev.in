@@ -1,10 +1,8 @@
+-c base.txt
+
 invoke
 minchin.releaser
 pip-tools
 isort
 black
 pytest
-
-# Pygments pinned by Pelican
-# https://github.com/getpelican/pelican/pull/3446
-pygments <2.19.0
