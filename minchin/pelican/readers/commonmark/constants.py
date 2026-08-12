@@ -5,7 +5,7 @@ import mdit_py_plugins.subscript
 import mdit_py_plugins.superscript
 
 __title__ = "minchin.pelican.readers.commonmark"
-__version__ = "2.4.2"
+__version__ = "2.4.3-dev"
 __description__ = "CommonMark Reader for Pelican (via Markdown-IT)"
 __author__ = "W. Minchin"
 __email__ = "w_minchin@hotmail.com"
