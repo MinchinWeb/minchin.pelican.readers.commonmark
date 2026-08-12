@@ -22,16 +22,13 @@ markdown-it-py==3.0.0
     # via
     #   -r .requirements/base.in
     #   mdit-py-plugins
-    #   minchin-md-it-superscript
     #   rich
 markupsafe==3.0.2
     # via jinja2
-mdit-py-plugins==0.5.0
+mdit-py-plugins==0.6.1
     # via -r .requirements/base.in
 mdurl==0.1.2
     # via markdown-it-py
-minchin-md-it-superscript==1.0.1
-    # via -r .requirements/base.in
 minchin-pelican-plugins-autoloader==1.2.1
     # via -r .requirements/base.in
 ordered-set==4.1.0

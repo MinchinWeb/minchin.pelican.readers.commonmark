@@ -2,8 +2,7 @@ import mdit_py_plugins.deflist
 import mdit_py_plugins.footnote
 import mdit_py_plugins.front_matter
 import mdit_py_plugins.subscript
-
-import minchin.md_it.superscript
+import mdit_py_plugins.superscript
 
 __title__ = "minchin.pelican.readers.commonmark"
 __version__ = "2.4.1-dev"
@@ -22,7 +21,7 @@ COMMONMARK_DEFAULT_CONFIG = {
         mdit_py_plugins.front_matter.front_matter_plugin,
         # consider "Heading Anchors"
         mdit_py_plugins.subscript.sub_plugin,
-        minchin.md_it.superscript.superscript_plugin,
+        mdit_py_plugins.superscript.superscript_plugin,
     ],
     "enable": [
         "table",
