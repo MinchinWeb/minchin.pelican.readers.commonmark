@@ -7,7 +7,7 @@ except ImportError:
     MENUITEMS = (
         (
             "Dev Blog",
-            "https://blog.minchin.ca/label/commonmark-pelican/",
+            "https://blog.minchin.ca/label/commonmark-reader/",
             # "fa fa-fw fa-pencil"
         ),
     )
@@ -22,7 +22,7 @@ else:
     MENUITEMS = (
         (
             "Dev Blog",
-            "https://blog.minchin.ca/label/commonmark-pelican/",
+            "https://blog.minchin.ca/label/commonmark-reader/",
             "fa fa-fw fa-pencil"
         ),
     )

@@ -10,7 +10,7 @@ __version__ = "2.4.1-dev"
 __description__ = "CommonMark Reader for Pelican (via Markdown-IT)"
 __author__ = "W. Minchin"
 __email__ = "w_minchin@hotmail.com"
-__url__ = "http://blog.minchin.ca/label/commonmark-pelican/"
+__url__ = "https://blog.minchin.ca/label/commonmark-reader/"
 __license__ = "MIT License"
 
 LOG_PREFIX = "[CommonMark]"

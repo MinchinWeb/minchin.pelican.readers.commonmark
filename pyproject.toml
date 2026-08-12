@@ -52,7 +52,7 @@ classifiers = [
 ]
 
 [project.urls]
-# "Homepage" =
+Homepage = "https://blog.minchin.ca/label/commonmark-reader/"
 "Bug Tracker" = "https://github.com/minchinweb/minchin.pelican.readers.commonmark/issues"
 # Documentation = 
 Repository = "https://github.com/minchinweb/minchin.pelican.readers.commonmark"
