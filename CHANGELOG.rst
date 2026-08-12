@@ -4,6 +4,7 @@ Changelog for CommonMark
 *This is the changelog for ``minchin.pelican.readers.commonmark``, a plugin for
 Pelican.*
 
+- :support:`-` clean up files includes in builds.
 - :bug:`8` use *mdit-py-plugins*' version of the superscript plugin. Requires
   ``mdit-py-plugins >= 0.6.0``.
 - :bug:`9` update project URL to
